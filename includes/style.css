@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --violeta: #4c315f;
+    --violeta-oscuro: #2f1c3f;
+    --violeta-claro: #7b5c91;
+    --lila: #8f67aa;
+    --lila-suave: #f5edf8;
+    --lila-muy-suave: #fbf7fc;
+    --blanco: #ffffff;
+    --gris: #6f6475;
+    --gris-claro: #e8ddee;
+    --texto: #2b2133;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Jost', Arial, sans-serif;
+    background-color: var(--lila-muy-suave);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+
+header {
+    background: rgba(47, 28, 63, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: var(--blanco);
+    padding: 12px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo h1 {
+    font-weight: 400;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0;
+    color: var(--blanco);
+}
+
+header nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--gris-claro);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: var(--blanco);
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.hero h2 {
+    font-weight: 300;
+    font-size: 36px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--violeta-oscuro);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+.form-ritual {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 12px 40px rgba(76, 49, 95, 0.12);
+    margin-top: 30px;
+}
+
+.form-ritual label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--violeta);
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+.form-ritual input,
+.form-ritual select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 12px;
+    background: var(--blanco);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--texto);
+    transition: all 0.2s;
+}
+
+.form-ritual input:focus,
+.form-ritual select:focus {
+    outline: none;
+    border-color: var(--lila);
+    box-shadow: 0 0 0 3px rgba(143, 103, 170, 0.15);
+}
+
+.btn-dark {
+    background: linear-gradient(90deg, var(--lila), var(--violeta));
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blanco);
+    box-shadow: 0 12px 25px rgba(76, 49, 95, 0.25);
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-dark:hover {
+    background: linear-gradient(90deg, #9d75b8, #3b244d);
+    transform: translateY(-2px);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(143, 103, 170, 0.3);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--violeta);
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.2s;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   CARDS (catálogo de productos)
+   ============================================ */
+.card-ritual {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(76, 49, 95, 0.08);
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-ritual:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(76, 49, 95, 0.15);
+}
+
+.card-ritual img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    background-color: var(--lila-suave);
+}
+
+.card-ritual .card-body {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-ritual .marca {
+    display: inline-block;
+    align-self: flex-start;
+    background: transparent;
+    color: var(--lila);
+    padding: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.card-ritual .card-title {
+    color: var(--violeta-oscuro);
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+.card-ritual .precio {
+    color: var(--violeta);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+    margin-top: auto;
+}
+
+.card-ritual .btn-glass {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+main {
+    padding: 40px;
+    min-height: 70vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    background: transparent;
+    color: var(--gris);
+    text-align: center;
+    padding: 40px 20px 30px;
+    margin-top: 80px;
+    border-top: 1px solid var(--gris-claro);
+}
+
+footer .footer-brand {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--violeta);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+footer .footer-info {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+/* ============================================
+   DETALLE DE PRODUCTO
+   ============================================ */
+.detalle-img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(76, 49, 95, 0.12);
+}
+
+.detalle-info {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 12px 40px rgba(76, 49, 95, 0.12);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalle-info h3 {
+    color: var(--violeta-oscuro);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.detalle-info .descripcion {
+    color: var(--gris);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.detalle-info .precio-grande {
+    color: var(--violeta);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.detalle-info .stock {
+    color: var(--gris);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.detalle-info hr {
+    margin: 32px 0;
+    border: none;
+    border-top: 1px solid var(--gris-claro);
+}
+
+.detalle-info .vendedor-nombre {
+    color: var(--violeta-oscuro);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.detalle-info .vendedor-contacto {
+    color: var(--gris);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}

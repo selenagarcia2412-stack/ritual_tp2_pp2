@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ritual | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../includes/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Ritual</h1>
+        </div>
+        <nav>
+            <a href="../index.php">Inicio</a>
+            <a href="../productos/productos.html">Catálogo</a>
+            <a href="registro.html">Registrarme</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h2>Iniciar Sesión</h2>
+            <p>Beauty & Self Care</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="login.php" method="post" class="form-ritual">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+
+                    <label for="contrasenia">Contraseña</label>
+                    <input type="password" name="contrasenia" required>
+
+                    <button type="submit" class="btn-dark">Ingresar</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </main>
+
+<footer>
+    <p class="footer-brand">Ritual · Beauty & Self Care</p>
+    <p class="footer-info">ISEC | PP Programación II | 2026</p>
+</footer>
+
+</body>
+</html>

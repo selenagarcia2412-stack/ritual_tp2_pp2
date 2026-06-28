@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ritual | Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../includes/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Ritual</h1>
+        </div>
+        <nav>
+            <a href="../index.php">Inicio</a>
+            <a href="../productos/productos.html">Catálogo</a>
+            <a href="login.html">Ingresar</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h2>Crear Cuenta</h2>
+            <p>Sumate a Ritual</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="guardarUsuario.php" method="post" class="form-ritual">
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" required>
+
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+
+                    <label for="contrasenia">Contraseña</label>
+                    <input type="password" name="contrasenia" required>
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" name="telefono">
+
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion">
+
+                    <label for="id_rol">Tipo de usuario</label>
+                    <select name="id_rol" required>
+                        <option value="1">Cliente</option>
+                        <option value="2">Vendedor</option>
+                    </select>
+
+                    <button type="submit" class="btn-dark">Registrarme</button>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </main>
+
+<footer>
+    <p class="footer-brand">Ritual · Beauty & Self Care</p>
+    <p class="footer-info">ISEC | PP Programación II | 2026</p>
+</footer>
+
+</body>
+</html>

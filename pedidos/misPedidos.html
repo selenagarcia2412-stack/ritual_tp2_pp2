@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ritual | Mis Pedidos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../includes/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Ritual</h1>
+        </div>
+        <nav>
+            <a href="../index.php">Inicio</a>
+            <a href="../productos/productos.html">Catálogo</a>
+            <a href="misPedidos.html">Mis pedidos</a>
+            <a href="../usuarios/logout.php">Salir</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="app">
+
+            <div class="hero">
+                <h2>Mis Pedidos</h2>
+                <p>Beauty & Self Care</p>
+            </div>
+
+            <div v-if="pedidos.length === 0" class="form-ritual" style="text-align: center;">
+                <p style="color: var(--gris);">Todavía no hiciste ningún pedido.</p>
+            </div>
+
+            <div class="row g-4">
+                <div v-for="pedido in pedidos" class="col-md-6">
+                    <div class="form-ritual">
+                        <h3 style="color: var(--violeta-oscuro); font-weight: 300; letter-spacing: 3px; text-transform: uppercase; font-size: 13px;">Pedido #{{ pedido.id_pedido }}</h3>
+                        <p style="color: var(--gris); font-size: 13px; margin-top: 10px;">Fecha: {{ pedido.fecha }}</p>
+                        <p class="precio" style="font-size: 24px; margin-top: 14px;">$ {{ pedido.total }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-brand">Ritual · Beauty & Self Care</p>
+        <p class="footer-info">ISEC | PP Programación II | 2026</p>
+    </footer>
+
+    <!-- Vue desde CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            created() {
+                this.getMisPedidos();
+            },
+            data() {
+                return {
+                    pedidos: []
+                }
+            },
+            methods: {
+                async getMisPedidos() {
+                    const res = await fetch('getMisPedidos.php');
+                    const datos = await res.json();
+                    this.pedidos = datos;
+                    console.log(datos);
+                }
+            }
+        }).mount('#app');
+    </script>
+
+</body>
+</html>
